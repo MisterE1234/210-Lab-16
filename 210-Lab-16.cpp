@@ -15,10 +15,22 @@ private:
 public:
     // getter and setter member functions
     //getter functions:
+        //getName function to get the name of the color
+        //It requires no parameters and returns a string
     string getName() const { return name; }
+
+        //getRed function to get the red value of the color
+        //It requires no parameters and returns an integer
     int getRed() const { return red; }
+
+        //getGreen function to get the green value of the color
+        //It requires no parameters and returns an integer
     int getGreen() const { return green; }
+
+        //getBlue function to get the blue value of the color
+        //It requires no parameters and returns an integer
     int getBlue() const { return blue; }
+
     //setter functions:
         //setName function to set the name of the color
         //It requires a string parameter and returns nothing
@@ -33,6 +45,7 @@ public:
         }
 
     //Default constructor
+        //sets name to "none" and RGB values to 0 thus requires no parameters
         Color() {
             name = "none";
             red = 0;
@@ -41,79 +54,80 @@ public:
         };
 
     //partial constructor
-    Color(string n) {
-        name = n;
-        red = 0;
-        green = 0;
-        blue = 0;
-    };
+        //sets name, but RGB values are set to 0 thus requires a string parameter
+        Color(string n) {
+            name = n;
+            red = 0;
+            green = 0;
+            blue = 0;
+        };
 
     //full parameter constructor
-    Color(string n, int r, int g, int b) {
-        name = n;
-        red = r;
-        green = g;
-        blue = b;
-    };
+        //sets all values thus requires a string and three integers
+        Color(string n, int r, int g, int b) {
+            name = n;
+            red = r;
+            green = g;
+            blue = b;
+        };
 
     //Print function
-    void print() {
-        cout << name << ":\n ";
-        cout << "RGB(" << red << ", " << green << ", " << blue << ")" << endl;
-    }
+        void print() {
+            cout << name << ":\n ";
+            cout << "RGB(" << red << ", " << green << ", " << blue << ")" << endl << endl;
+        }
 };
 
 int main() {
-    // Create Color objects
+    // Create Color objects:
     //Incomplete Color objects
-    Color colorB; // Default constructor for black
-    Color colorCR("Crimson Red"); // Partial constructor for crimson red
+        Color colorB; // Default constructor for black
+        Color colorCR("Crimson Red"); // Partial constructor for crimson red
 
     // Full parameter constructor for Colors colorLG and colorW with all values set
-    Color colorLG("Lime Green", 50, 205, 50); // Full parameter constructor for lime green
-    Color colorW("White", 255, 255, 255); // Full parameter constructor for white
+        Color colorLG("Lime Green", 50, 205, 50); // Full parameter constructor for lime green
+        Color colorW("White", 255, 255, 255); // Full parameter constructor for white
 
     // Set name for colorB as the values are set to 0 by default
-    colorB.setName("Black");
+        colorB.setName("Black");
 
     // Set the RGB values for colorCR as the name is set but RGB values are set to 0 by default
     
-    colorCR.setRGB(220, 20, 60);
+        colorCR.setRGB(220, 20, 60);
 
     //Displaying all the reds of each color
-    cout << "Red values of each color:\n";
-    cout << colorB.getName() << ": " << colorB.getRed() << endl;
-    cout << colorCR.getName() << ": " << colorCR.getRed() << endl;
-    cout << colorLG.getName() << ": " << colorLG.getRed() << endl;
-    cout << colorW.getName() << ": " << colorW.getRed() << endl;
-    cout << endl;
+        cout << "Red values of each color:\n";
+        cout << colorB.getName() << ": " << colorB.getRed() << endl;
+        cout << colorCR.getName() << ": " << colorCR.getRed() << endl;
+        cout << colorLG.getName() << ": " << colorLG.getRed() << endl;
+        cout << colorW.getName() << ": " << colorW.getRed() << endl;
+        cout << endl;
 
     //Displaying all the greens of each color
-    cout << "Green values of each color:\n";
-    cout << colorB.getName() << ": " << colorB.getGreen() << endl;
-    cout << colorCR.getName() << ": " << colorCR.getGreen() << endl;
-    cout << colorLG.getName() << ": " << colorLG.getGreen() << endl;
-    cout << colorW.getName() << ": " << colorW.getGreen() << endl;
-    cout << endl;
+        cout << "Green values of each color:\n";
+        cout << colorB.getName() << ": " << colorB.getGreen() << endl;
+        cout << colorCR.getName() << ": " << colorCR.getGreen() << endl;
+        cout << colorLG.getName() << ": " << colorLG.getGreen() << endl;
+        cout << colorW.getName() << ": " << colorW.getGreen() << endl;
+        cout << endl;
 
     //Displaying all the blues of each color
-    cout << "Blue values of each color:\n";
-    cout << colorB.getName() << ": " << colorB.getBlue() << endl;
-    cout << colorCR.getName() << ": " << colorCR.getBlue() << endl;
-    cout << colorLG.getName() << ": " << colorLG.getBlue() << endl;
-    cout << colorW.getName() << ": " << colorW.getBlue() << endl;
-    cout << endl;
+        cout << "Blue values of each color:\n";
+        cout << colorB.getName() << ": " << colorB.getBlue() << endl;
+        cout << colorCR.getName() << ": " << colorCR.getBlue() << endl;
+        cout << colorLG.getName() << ": " << colorLG.getBlue() << endl;
+        cout << colorW.getName() << ": " << colorW.getBlue() << endl;
+        cout << endl;
 
 
     // Print the colors
-    colorB.print();
-    cout << endl;
-    colorCR.print();
-    cout << endl;
-    colorLG.print();
-    cout << endl;
-    colorW.print();
-    cout << endl;
-
+        colorB.print();
+        
+        colorCR.print();
+        
+        colorLG.print();
+        
+        colorW.print();
+        
     return 0;
 }
