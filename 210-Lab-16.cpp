@@ -20,18 +20,25 @@ public:
     int getGreen() const { return green; }
     int getBlue() const { return blue; }
     //setter functions:
-    void setName(string n) { name = n; }
-    void setRed(int r) { red = r; }
-    void setGreen(int g) { green = g; }
-    void setBlue(int b) { blue = b; }
+        //setName function to set the name of the color
+        //It requires a string parameter and returns nothing
+        void setName(string n) { name = n; }
+
+        //setRGB function to set the RGB values of the color
+        //It requires three integer parameters and returns nothing
+        void setRGB (int r, int g, int b) {
+            red = r;
+            green = g;
+            blue = b;
+        }
 
     //Default constructor
-    Color() {
-        name = "none";
-        red = 0;
-        green = 0;
-        blue = 0;
-    };
+        Color() {
+            name = "none";
+            red = 0;
+            green = 0;
+            blue = 0;
+        };
 
     //partial constructor
     Color(string n) {
@@ -58,21 +65,22 @@ public:
 
 int main() {
     // Create Color objects
-    Color colorB; // Default constructor
-    Color colorCR("Crimson Red"); // Partial constructor
-    Color colorLG("Lime Green", 50, 205, 50); // Full parameter constructor
-    Color colorW; // Default constructor
+    //Incomplete Color objects
+    Color colorB; // Default constructor for black
+    Color colorCR("Crimson Red"); // Partial constructor for crimson red
 
-    // Set values for colorB
+    // Full parameter constructor for Colors colorLG and colorW with all values set
+    Color colorLG("Lime Green", 50, 205, 50); // Full parameter constructor for lime green
+    Color colorW("White", 255, 255, 255); // Full parameter constructor for white
+
+    // Set name for colorB as the values are set to 0 by default
     colorB.setName("Black");
 
-    // Set values for colorCR
+    // Set the RGB values for colorCR as the name is set but RGB values are set to 0 by default
     
-    colorCR.setRed(220);
-    colorCR.setGreen(20);
-    colorCR.setBlue(60);
+    colorCR.setRGB(220, 20, 60);
 
-    //displaying all the reds of each color
+    //Displaying all the reds of each color
     cout << "Red values of each color:\n";
     cout << colorB.getName() << ": " << colorB.getRed() << endl;
     cout << colorCR.getName() << ": " << colorCR.getRed() << endl;
@@ -80,7 +88,7 @@ int main() {
     cout << colorW.getName() << ": " << colorW.getRed() << endl;
     cout << endl;
 
-    //displaying all the greens of each color
+    //Displaying all the greens of each color
     cout << "Green values of each color:\n";
     cout << colorB.getName() << ": " << colorB.getGreen() << endl;
     cout << colorCR.getName() << ": " << colorCR.getGreen() << endl;
@@ -88,7 +96,7 @@ int main() {
     cout << colorW.getName() << ": " << colorW.getGreen() << endl;
     cout << endl;
 
-    //displaying all the blues of each color
+    //Displaying all the blues of each color
     cout << "Blue values of each color:\n";
     cout << colorB.getName() << ": " << colorB.getBlue() << endl;
     cout << colorCR.getName() << ": " << colorCR.getBlue() << endl;
